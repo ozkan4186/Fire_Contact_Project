@@ -13,22 +13,24 @@ export const AddUser =(info)=>{
         gender:info.gender,
 
     })
-    console.log("dkshkdsdj")
+
 }
 
 export const GetUser =()=>{
     const [contactList, setContactList] = useState();
+  
     useEffect(() => {
       const db = getDatabase();
       const userRef = ref(db,'user/');
       onValue(userRef,(snapshot)=>{
-        const info = snapshot.val();
-        const baglantiArray=[];
+        const data = snapshot.val();
+        const userArray=[];
 
-        for(let id in info){
-            baglantiArray.push({id,...info[id]})
+        for(let id in data){
+            userArray.push({id,...data[id]})
         }
-        setContactList(baglantiArray);
+        setContactList(userArray);
+      
         
       })
     }, [])

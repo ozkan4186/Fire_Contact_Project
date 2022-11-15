@@ -24,7 +24,7 @@ function App() {
     <div className=" w-100 flex-wrap d-flex justify-content-evenly align-items-center">
       <Form info={info} setInfo={setInfo} handleSubmit={handleSubmit} />
       <ToastContainer />
-      <Contact />
+      <Contact  />
     </div>
   );
 }

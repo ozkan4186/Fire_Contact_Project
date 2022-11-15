@@ -1,6 +1,9 @@
 import Table from "react-bootstrap/Table";
+import { GetUser } from "../../utils/functions";
 
 function Contact() {
+  const { contactList, isLoading } = GetUser();
+  console.log(contactList);
   return (
     <div className="container w-50 contact bg-danger ">
       <Table striped bordered hover>
@@ -15,12 +18,16 @@ function Contact() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
+          {contactList?.map((item, index) => {
+            return(
+                        <tr>
+        <td>{item.phoneNumber}</td>
+        <td>{item.gender}</td>
+        <td>{item.username}</td>
+        <td>delete</td>
+        <td>edit</td>
+      </tr>
+            )
       
       
       
@@ -28,10 +35,7 @@ function Contact() {
       
       
       
-      
-      
-      
-      
+          })}
         </tbody>
       </Table>
     </div>
