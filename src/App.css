@@ -1,6 +1,4 @@
-.App {
-  text-align: center;
-}
+
 
 .App-logo {
   height: 40vmin;
@@ -35,4 +33,37 @@
   to {
     transform: rotate(360deg);
   }
+}
+.for {
+  margin: 3rem ;
+  position: relative;
+  width: 50%;
+ 
+}
+.relatives {
+  position: relative;
+}
+.phone1 {
+  position: absolute;
+
+  bottom: 15rem;
+  left: 3rem;
+}
+.phone2 {
+  position: absolute;
+
+  bottom: 10rem;
+  left: 3rem;
+}
+/* .tables{ */
+  /* width: 300px; */
+  /* margin: 2rem auto; */
+  /* border: 2px solid red; */
+  /* margin-bottom: 5rem; */
+  /* height: 25rem; */
+/* } */
+.contact{
+  width: 50%;
+
+ 
 }
