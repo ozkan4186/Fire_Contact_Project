@@ -1,7 +1,7 @@
 import {toast} from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 
-const Toastify=(msg)=>{
+const ToastifySuccess=(msg)=>{
 toast.success(msg, {
     position: "top-right",
     autoClose: 2000,
@@ -12,4 +12,4 @@ toast.success(msg, {
     progress: undefined,
     });
 }
-    export default Toastify;
+export default  ToastifySuccess;

@@ -1,19 +1,20 @@
 import Table from "react-bootstrap/Table";
 import { DeleteUser, EditUser, GetUser } from "../../utils/functions";
 
-function Contact() {
-  const { contactList, isLoading } = GetUser();
+function Contact({ handleUserEdit }) {
+  const { contactList } = GetUser();
   console.log(contactList);
   return (
-    <div className="container w-50 contact flex-wrap 	d-none d-sm-block " style={{
-      backgroundColor:"lightblue",
-      borderRadius:"10px",
-      
-      
-    }} >
-      <Table striped bordered hover className="mx-auto p-1 mt-3 text-center " >
+    <div
+      className="container w-50 contact flex-wrap 	d-none d-sm-block "
+      style={{
+        backgroundColor: "lightblue",
+        borderRadius: "10px",
+      }}
+    >
+      <Table striped bordered hover className="mx-auto p-1 mt-3 text-center ">
         <thead>
-          <tr className="text-danger" >
+          <tr className="text-danger">
             <th>Username</th>
             <th>Phone Number</th>
             <th>Gender</th>
@@ -33,17 +34,28 @@ function Contact() {
                   style={{
                     cursor: "pointer",
                   }}
-               
                 >
-                  <i    onClick={() => DeleteUser(item.id)} className="fa-solid fa-trash"></i>
+                  <i
+                    onClick={() => DeleteUser(item.id)}
+                    className="fa-solid fa-trash"
+                  ></i>
                 </td>
                 <td
                   style={{
                     cursor: "pointer",
                   }}
-                
                 >
-                  <i   onClick={()=>EditUser(item)} class="fa-solid fa-pen-to-square"></i>
+                  <i
+                    onClick={() =>
+                      handleUserEdit(
+                        item?.id,
+                        item?.username,
+                        item?.phoneNumber,
+                        item?.gender
+                      )
+                    }
+                    class="fa-solid fa-pen-to-square"
+                  ></i>
                 </td>
               </tr>
             );
