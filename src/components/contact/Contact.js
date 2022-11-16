@@ -1,15 +1,19 @@
 import Table from "react-bootstrap/Table";
-import { GetUser } from "../../utils/functions";
+import { DeleteUser, EditUser, GetUser } from "../../utils/functions";
 
 function Contact() {
   const { contactList, isLoading } = GetUser();
   console.log(contactList);
   return (
-    <div className="container w-50 contact bg-danger ">
-      <Table striped bordered hover>
+    <div className="container w-50 contact flex-wrap 	d-none d-sm-block " style={{
+      backgroundColor:"lightblue",
+      borderRadius:"10px",
+      
+      
+    }} >
+      <Table striped bordered hover className="mx-auto p-1 mt-3 text-center " >
         <thead>
-          <tr>
-            <th>#</th>
+          <tr className="text-danger" >
             <th>Username</th>
             <th>Phone Number</th>
             <th>Gender</th>
@@ -19,22 +23,30 @@ function Contact() {
         </thead>
         <tbody>
           {contactList?.map((item, index) => {
-            return(
-                        <tr>
-        <td>{item.phoneNumber}</td>
-        <td>{item.gender}</td>
-        <td>{item.username}</td>
-        <td>delete</td>
-        <td>edit</td>
-      </tr>
-            )
-      
-      
-      
-      
-      
-      
-      
+            return (
+              <tr>
+                <td>{item.username}</td>
+                <td>{item.phoneNumber}</td>
+                <td>{item.gender}</td>
+
+                <td
+                  style={{
+                    cursor: "pointer",
+                  }}
+               
+                >
+                  <i    onClick={() => DeleteUser(item.id)} className="fa-solid fa-trash"></i>
+                </td>
+                <td
+                  style={{
+                    cursor: "pointer",
+                  }}
+                
+                >
+                  <i   onClick={()=>EditUser(item)} class="fa-solid fa-pen-to-square"></i>
+                </td>
+              </tr>
+            );
           })}
         </tbody>
       </Table>

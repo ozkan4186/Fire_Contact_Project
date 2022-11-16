@@ -6,28 +6,29 @@ const Form = ({ info, setInfo, handleSubmit }) => {
     e.preventDefault();
     const { name, value } = e.target;
     console.log(name, value);
-    setInfo({...info,[name]:value})
+    setInfo({ ...info, [name]: value });
     console.log(info);
-
   };
 
   return (
-    <form className="container w-25  for " onSubmit={handleSubmit}>
-      <div className="d-flex justify-content-center border border-none w-100 ">
+    <form className="container w-25  	d-none d-sm-block for " onSubmit={handleSubmit}>
+      <div className="d-flex justify-content-center border border-primary rounded-2 w-100 ">
         <a className="m-2 mt-3 fs-5" href="https://github.com/ozkan4186">
-          <code> {`<Anka/>`} </code>
+          <code className="text-danger fs-3" > {`<ÖZKAN/>`} </code>
         </a>
-        <h2 className="m-2">DESİGN</h2>
+        <h2 className="m-2  text-primary ">DESİGN</h2>
       </div>
 
       <br />
       <br />
-      <h2 className="border border-none w-100 text-center ">ADD CONTACT</h2>
+      <h2 className="border border-none rounded-2 w-100 text-center border border-primary  text-primary ">
+        ADD CONTACT
+      </h2>
       <br />
       <br />
       <div
         style={{
-          backgroundColor: "aqua",
+          backgroundColor: "lightBlue",
           alignİtems: "center",
           border: "none",
           borderRadius: "10px",
@@ -40,9 +41,10 @@ const Form = ({ info, setInfo, handleSubmit }) => {
             name="username"
             className="form-control px-3"
             aria-describedby="emailHelp"
-            placeholder="username"
+            placeholder="USERNAME"
             onChange={handleChange}
             value={info.username}
+            reguired
           />
           <i className="fa-solid fa-person phone1 "></i>
           <div id="emailHelp" className="form-text">
@@ -52,11 +54,13 @@ const Form = ({ info, setInfo, handleSubmit }) => {
         <div className="mb-3 ">
           <input
             type="tel"
+             reguired
             className="form-control px-4 "
             name="phoneNumber"
             placeholder="PHONE NUMBER"
             onChange={handleChange}
             value={info.phoneNumber}
+           
           />
           <i className="fa-solid fa-phone  phone2 "></i>
         </div>
@@ -66,10 +70,13 @@ const Form = ({ info, setInfo, handleSubmit }) => {
           onChange={handleChange}
           name="gender"
           value={info.gender}
+          reguired
         >
-          <option value="Gender">Gender</option>
+           <option value="Male" selected > Please your do select </option>
+          <option value="Other">Other</option>
           <option value="Female">Female</option>
           <option value="Male">Male</option>
+         
         </select>
         <br />
 

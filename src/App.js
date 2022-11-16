@@ -16,15 +16,19 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    AddUser(info)
+
+
+    
+    AddUser(info);
   };
 
   console.log(info);
   return (
-    <div className=" w-100 flex-wrap d-flex justify-content-evenly align-items-center">
+    <div className=" w-100 d-flex  flex-wrap justify-content-evenly align-items-center ">
       <Form info={info} setInfo={setInfo} handleSubmit={handleSubmit} />
+
+      <Contact />
       <ToastContainer />
-      <Contact  />
     </div>
   );
 }
