@@ -20,7 +20,7 @@ export const AddUser = (info) => {
     username: info.username,
     phoneNumber: info.phoneNumber,
     gender: info.gender,
-  });
+  })
 };
 
 export const GetUser = () => {

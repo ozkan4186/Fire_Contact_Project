@@ -6,13 +6,14 @@ function Contact({ handleUserEdit }) {
   console.log(contactList);
   return (
     <div
-      className="container w-50 contact flex-wrap 	d-none d-sm-block "
+      className="container w-50 contact d-flex flex-wrap "
       style={{
         backgroundColor: "lightblue",
         borderRadius: "10px",
+        minWidth:600
       }}
     >
-      <Table striped bordered hover className="mx-auto p-1 mt-3 text-center ">
+      <Table sx={{minWidth:650}} striped bordered hover className="mx-auto p-1 mt-3 text-center ">
         <thead>
           <tr className="text-danger">
             <th>Username</th>
@@ -25,7 +26,7 @@ function Contact({ handleUserEdit }) {
         <tbody>
           {contactList?.map((item, index) => {
             return (
-              <tr>
+              <tr key={index} >
                 <td>{item.username}</td>
                 <td>{item.phoneNumber}</td>
                 <td>{item.gender}</td>
@@ -54,7 +55,7 @@ function Contact({ handleUserEdit }) {
                         item?.gender
                       )
                     }
-                    class="fa-solid fa-pen-to-square"
+                    className="fa-solid fa-pen-to-square"
                   ></i>
                 </td>
               </tr>
