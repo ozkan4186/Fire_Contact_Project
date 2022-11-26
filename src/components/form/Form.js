@@ -1,5 +1,5 @@
 import React from "react";
-import { AddUser } from "../../utils/functions";
+
 
 const Form = ({ info, setInfo, handleSubmit }) => {
   const handleChange = (e) => {

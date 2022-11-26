@@ -1,5 +1,5 @@
 import Table from "react-bootstrap/Table";
-import { DeleteUser, EditUser, GetUser } from "../../utils/functions";
+import { DeleteUser,GetUser } from "../../utils/functions";
 
 function Contact({ handleUserEdit }) {
   const { contactList } = GetUser();
